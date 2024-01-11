@@ -22,7 +22,7 @@
         $description = filter_var($description, FILTER_SANITIZE_STRING);
 
         $stock = $_POST['stock'];
-        $stock = filter_var($stock. FILTER_SANITIZE_STRING);
+        $stock = filter_var($stock, FILTER_SANITIZE_STRING);
         $status = 'active';
         
         $image = $_FILES['image']['name'];
@@ -68,7 +68,7 @@
         $description = filter_var($description, FILTER_SANITIZE_STRING);
 
         $stock = $_POST['stock'];
-        $stock = filter_var($stock. FILTER_SANITIZE_STRING);
+        $stock = filter_var($stock, FILTER_SANITIZE_STRING);
         $status = 'deactive';
         
         $image = $_FILES['image']['name'];
@@ -141,7 +141,7 @@
                     </div>
                     <div class="input-field">
                         <p>product stock <span>*</span></p>
-                        <input type="number" name="stock" maxlength="10" min="0" max="9999999999" placeholder="add product stock" required class="box">
+                        <input type="number" name="stock" maxlength="10" min="0" max="9999999" placeholder="add product stock" required class="box">
                     </div>
                     <div class="input-field">
                         <p>product image <span>*</span></p>

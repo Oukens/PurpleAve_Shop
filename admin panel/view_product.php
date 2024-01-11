@@ -35,7 +35,7 @@
 <body>
     
     <div class="main-container">
-        <?php include '../components/admin_header.php' ?>
+        <?php include '../components/admin_header.php'; ?>
         <section class="show-post">
             <div class="heading">
                 <h1>your products</h1>

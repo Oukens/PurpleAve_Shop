@@ -10,6 +10,22 @@
     
     $get_id = $_GET['post_id'];
 
+    //delete product
+    if(isset($_POST['delete'])){
+        $p_id = $_POST['product_id'];
+        $p_id = filter_var($p_id, FILTER_SANITIZE_STRING);
+
+        $delete_image = $conn->prepare("SELECT * FROM `products` WHERE id = ? AND seller_id =?");
+        $delete_image-> execute([$p_id, $seller_id]);
+
+        $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
+        if ($fetch_delete_image[''] != ''){
+            unlink('../upload_files/'.$fetch_delete_image['image']);
+        }
+        $delete_product = $conn->prepare("DELETE FROM `products` WHERE id = ? AND seller_id = ?");
+        $delete_product->execute([$p_id, $seller_id]);
+        header("location:view_product.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +42,7 @@
 <body>
     
     <div class="main-container">
-        <?php include '../components/admin_header.php' ?>
+        <?php include '../components/admin_header.php'; ?>
         <section class="read-post">
             <div class="heading">
                 <h1>product detail</h1>
@@ -46,7 +62,7 @@
                                 <div class="status" style="color: <?php if ($fetch_product['status'] == 'active'){ echo "limegreen";}else{echo "coral";} ?>"><?= $fetch_product['status']; ?></div>
                                 <?php if($fetch_product['image'] != ''){ ?>
                                     <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image">
-                                <?php }   ?>
+                                <?php } ?>
                                 <div class="price">$<?= $fetch_product['price']; ?>/-</div>
                                 <div class="title"><?= $fetch_product['name']; ?></div>
                                 <div class="content"><?= $fetch_product['product_detail']; ?></div>
@@ -61,9 +77,9 @@
                         }
                     }else{
                         echo'
-                        <div class="empty">
-                            <p>no products added yet! <br> <a href="add_products.php" class="btn" style="margin-top: 1.5rem;">add products</a></p>
-                        </div>
+                            <div class="empty">
+                                <p>no products added yet! <br> <a href="add_products.php" class="btn" style="margin-top: 1.5rem;">add products</a></p>
+                            </div>
                         
                         ';
                     }

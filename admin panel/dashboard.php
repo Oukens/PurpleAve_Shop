@@ -24,7 +24,7 @@
 <body>
     
     <div class="main-container">
-        <?php include '../components/admin_header.php' ?>
+        <?php include '../components/admin_header.php'; ?>
         <section class="dashboard">
             <div class="heading">
                 <h1>dashboard</h1>
