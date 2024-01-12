@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purple Avenue - Seller Registration Page</title>
+    <title>Purple Avenue - Admin Dashboard Page</title>
     <link rel="stylesheet" href="../css/admin_style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
