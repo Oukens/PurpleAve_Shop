@@ -47,7 +47,6 @@
                 <li><a href="dashboard.php"><i class="bx bxs-home-smile"></i>dashboard</a></li>
                 <li><a href="add_products.php"><i class="bx bxs-shopping-bags"></i>add product</a></li>
                 <li><a href="view_product.php"><i class="bx bxs-food-menu"></i>view product</a></li>
-                <li><a href="user_accounts.php"><i class="bx bxs-user-detail"></i>accounts</a></li>
                 <li><a href="../components/admin_logout.php" onclick="return confirm('logout from this website');"><i class="bx bx-log-out"></i>logout</a></li>
             </ul>
         </div>
