@@ -57,10 +57,10 @@ if (isset($_POST['delete'])) {
                                 <img src="../uploaded_files/<?= $fetch_products['image']; ?>" class="image">
                             <?php } ?>
                             <div class="status" style="color: <?php if ($fetch_products['status'] == 'active') {
-                                                                echo "limegreen";
-                                                            } else {
-                                                                echo "red";
-                                                            } ?>"><?= $fetch_products['status']; ?></div>
+                                echo "limegreen";
+                                } else {
+                                echo "red";
+                                } ?>"><?= $fetch_products['status']; ?></div>
                             <div class="price">$<?= $fetch_products['price']; ?>/-</div>
                             <div class="content">
                                 <img src="../image/e.jpg" class="shap">
